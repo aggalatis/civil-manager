@@ -22,15 +22,14 @@ import Typography from "views/Typography.js";
 import Icons from "views/Icons.js";
 import Maps from "views/Maps.js";
 import Notifications from "views/Notifications.js";
-import Upgrade from "views/Upgrade.js";
+import Customers from "views/Customers/Customers.js";
 
 const dashboardRoutes = [
   {
-    upgrade: true,
-    path: "/upgrade",
-    name: "Upgrade to PRO",
-    icon: "nc-icon nc-alien-33",
-    component: Upgrade,
+    path: "/customers",
+    name: "ΠΕΛΑΤΕΣ",
+    icon: "nc-icon nc-single-02",
+    component: Customers,
     layout: "/admin",
   },
   {
