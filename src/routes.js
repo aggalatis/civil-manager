@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Light Bootstrap Dashboard React - v2.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import Dashboard from "views/Dashboard.js";
 import UserProfile from "views/UserProfile.js";
 import TableList from "views/TableList.js";
@@ -31,6 +14,15 @@ const dashboardRoutes = [
     icon: "nc-icon nc-single-02",
     component: Customers,
     layout: "/admin",
+    sidebar: true,
+  },
+  {
+    path: "/customer/:handle",
+    name: "ΕΠΕΞΕΡΓΑΣΙΑ ΠΕΛΑΤΗ",
+    icon: "nc-icon nc-single-02",
+    component: Dashboard,
+    layout: "/admin",
+    sidebar: false,
   },
   {
     path: "/dashboard",
@@ -38,6 +30,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-chart-pie-35",
     component: Dashboard,
     layout: "/admin",
+    sidebar: true,
   },
   {
     path: "/user",
@@ -45,6 +38,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-circle-09",
     component: UserProfile,
     layout: "/admin",
+    sidebar: true,
   },
   {
     path: "/table",
@@ -52,6 +46,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-notes",
     component: TableList,
     layout: "/admin",
+    sidebar: true,
   },
   {
     path: "/typography",
@@ -59,6 +54,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-paper-2",
     component: Typography,
     layout: "/admin",
+    sidebar: true,
   },
   {
     path: "/icons",
@@ -66,6 +62,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-atom",
     component: Icons,
     layout: "/admin",
+    sidebar: true,
   },
   {
     path: "/maps",
@@ -73,6 +70,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-pin-3",
     component: Maps,
     layout: "/admin",
+    sidebar: true,
   },
   {
     path: "/notifications",
@@ -80,6 +78,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-bell-55",
     component: Notifications,
     layout: "/admin",
+    sidebar: true,
   },
 ];
 

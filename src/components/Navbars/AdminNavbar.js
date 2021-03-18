@@ -35,14 +35,6 @@ function Header() {
     document.body.appendChild(node);
   };
 
-  const getBrandText = () => {
-    for (let i = 0; i < routes.length; i++) {
-      if (location.pathname.indexOf(routes[i].layout + routes[i].path) !== -1) {
-        return routes[i].name;
-      }
-    }
-    return "Brand";
-  };
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -59,7 +51,7 @@ function Header() {
             onClick={(e) => e.preventDefault()}
             className="mr-2"
           >
-            {getBrandText()}
+            {"Civil Enginnering Management Platform"}
           </Navbar.Brand>
         </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="mr-2">
@@ -68,8 +60,7 @@ function Header() {
           <span className="navbar-toggler-bar burger-lines"></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="nav mr-auto" navbar>
-          </Nav>
+          <Nav className="nav mr-auto" navbar></Nav>
           <Nav className="ml-auto" navbar>
             <Nav.Item>
               <Nav.Link
