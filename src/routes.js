@@ -6,6 +6,7 @@ import Icons from "views/Icons.js";
 import Maps from "views/Maps.js";
 import Notifications from "views/Notifications.js";
 import Customers from "views/Customers/Customers.js";
+import EditCustomers from  "views/Customers/EditCustomer.js"
 
 const dashboardRoutes = [
   {
@@ -20,7 +21,7 @@ const dashboardRoutes = [
     path: "/customer/:handle",
     name: "ΕΠΕΞΕΡΓΑΣΙΑ ΠΕΛΑΤΗ",
     icon: "nc-icon nc-single-02",
-    component: Dashboard,
+    component: EditCustomers,
     layout: "/admin",
     sidebar: false,
   },
