@@ -31,7 +31,10 @@ class EditCustomer extends Component{
           let customer = response.data.customer[0]
           this.setState(
             {
-              customerID: customer.Id
+              customerID: customer.Id,
+              lastName: customer.LastName,
+              firstName: customer.FirstName,
+              fullName: customer.Fullname
             }
           )
         }
@@ -41,11 +44,11 @@ class EditCustomer extends Component{
     })
   }
   render() {
-    const {customerID} = this.state
+    const {customerID, lastName, firstName, fullName} = this.state
     return (
       <Container fluid>
       <Row>
-        <Col md="8">
+        <Col md="12">
           <Card>
             <Card.Header>
               <Card.Title as="h4">Επεξεργασία στοιχείων πελάτη</Card.Title>
@@ -53,7 +56,7 @@ class EditCustomer extends Component{
             <Card.Body>
               <Form>
                 <Row>
-                  <Col className="pr-1" md="5">
+                  <Col className="pr-1" md="2">
                     <Form.Group>
                       <label>ID</label>
                       <Form.Control
@@ -66,22 +69,35 @@ class EditCustomer extends Component{
                   </Col>
                   <Col className="px-1" md="3">
                     <Form.Group>
-                      <label>Username</label>
+                      <label>ΟΝΟΜΑ</label>
                       <Form.Control
-                        defaultValue="michael23"
-                        placeholder="Username"
+                        defaultValue={firstName}
+                        placeholder="Όνομα"
+                        type="text"
+                      ></Form.Control>
+                    </Form.Group>
+                  </Col>
+                  <Col className="pl-1" md="3">
+                    <Form.Group>
+                      <label>
+                        ΕΠΩΝΥΜΟ
+                      </label>
+                      <Form.Control
+                        defaultValue={lastName}
+                        placeholder="Επώνυμο"
                         type="text"
                       ></Form.Control>
                     </Form.Group>
                   </Col>
                   <Col className="pl-1" md="4">
                     <Form.Group>
-                      <label htmlFor="exampleInputEmail1">
-                        Email address
+                      <label>
+                        ΟΝΟΜΑΤΕΠΩΝΥΜΟ
                       </label>
                       <Form.Control
-                        placeholder="Email"
-                        type="email"
+                        defaultValue={fullName}
+                        placeholder="Ονοματεπώνυμο"
+                        type="text"
                       ></Form.Control>
                     </Form.Group>
                   </Col>
@@ -178,50 +194,7 @@ class EditCustomer extends Component{
             </Card.Body>
           </Card>
         </Col>
-        <Col md="4">
-          <Card className="card-user">
-            <div className="card-image">
-            </div>
-            <Card.Body>
-              <div className="author">
-                  <h5 className="title">Mike Andrew</h5>
-                <p className="description">michael24</p>
-              </div>
-              <p className="description text-center">
-                "Lamborghini Mercy <br></br>
-                Your chick she so thirsty <br></br>
-                I'm in that two seat Lambo"
-              </p>
-            </Card.Body>
-            <hr></hr>
-            <div className="button-container mr-auto ml-auto">
-              <Button
-                className="btn-simple btn-icon"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-                variant="link"
-              >
-                <i className="fab fa-facebook-square"></i>
-              </Button>
-              <Button
-                className="btn-simple btn-icon"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-                variant="link"
-              >
-                <i className="fab fa-twitter"></i>
-              </Button>
-              <Button
-                className="btn-simple btn-icon"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-                variant="link"
-              >
-                <i className="fab fa-google-plus-square"></i>
-              </Button>
-            </div>
-          </Card>
-        </Col>
+    
       </Row>
     </Container>
     );
