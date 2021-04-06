@@ -7,6 +7,7 @@ import Maps from "views/Maps.js";
 import Notifications from "views/Notifications.js";
 import Customers from "views/Customers/Customers.js";
 import EditCustomers from  "views/Customers/EditCustomer.js"
+import AddCustomer from  "views/Customers/AddCustomer.js"
 
 const dashboardRoutes = [
   {
@@ -22,6 +23,14 @@ const dashboardRoutes = [
     name: "ΕΠΕΞΕΡΓΑΣΙΑ ΠΕΛΑΤΗ",
     icon: "nc-icon nc-single-02",
     component: EditCustomers,
+    layout: "/admin",
+    sidebar: false,
+  },
+  {
+    path: "/addCustomer",
+    name: "ΔΗΜΙΟΥΡΓΙΑ ΠΕΛΑΤΗ",
+    icon: "nc-icon nc-single-02",
+    component: AddCustomer,
     layout: "/admin",
     sidebar: false,
   },

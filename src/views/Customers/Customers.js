@@ -12,7 +12,7 @@ function Customers() {
           <Col md="12">
             <Card className="strpied-tabled-with-hover">
               <Card.Header>
-                <Card.Title as="h4">Πίνακας Πελατών</Card.Title>
+                <Card.Title as="h4">Πίνακας Πελατών <a href='/addCustomer'><i className="nc-icon nc-simple-add"></i></a></Card.Title>
                 <p className="card-category">
                   Προβάλονται τα βασικά στοιχεία των πελατών του γραφείου.
                   <b>Επιπλέον στοιχεία εντός της καρτέλας παλάτη.</b>
