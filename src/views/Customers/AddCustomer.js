@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Swal from 'sweetalert2';
 import {
   Badge,
   Button,
@@ -12,6 +13,7 @@ import {
   Col,
 } from "react-bootstrap";
 
+
 class AddCustomer extends Component{
   constructor(props) {
     super(props);
@@ -19,8 +21,11 @@ class AddCustomer extends Component{
     this.handleInputChange = this.handleInputChange.bind(this)
   }
 
+  
   handleSave(e) {
     e.preventDefault()
+    if (this.state.firstName === '' || this.state.lastName === '')
+      return;
     let customer = {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
@@ -36,7 +41,8 @@ class AddCustomer extends Component{
       email: this.state.email,
       taxoffice: this.state.taxoffice,
       notes: this.state.notes
-    }
+    }         
+    
     axios.post(process.env.REACT_APP_API_URL + `Customers`, customer, {
       headers: {
         "Content-Type": "application/json",
@@ -45,12 +51,27 @@ class AddCustomer extends Component{
       },
     })
       .then((response) => {      
-        console.log(response)
-        
+        if (response.data.status == 200) {
+
+          Swal.fire({
+            icon: 'success',
+            title: 'Επιτυχής καταχώρηση πελάτη!',            
+          }).then(() => {
+            window.location.replace("/customers")
+          })
+          
+        } else {
+          console.log(response.data.message)
+          Swal.fire({
+            icon: 'error',
+            title: 'Αποτυχία!',
+          })
+        }       
         
     }).catch((error) => {
         console.log(error)
     })
+    
     
   }
   handleInputChange(e) {

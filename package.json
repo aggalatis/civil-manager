@@ -17,7 +17,9 @@
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.1",
-    "react-table": "^6.8.6"
+    "react-table": "^6.8.6",
+    "sweetalert2": "^10.16.0",
+    "sweetalert2-react-content": "^3.3.1"
   },
   "optionalDependencies": {
     "jquery": "3.5.1",
