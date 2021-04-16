@@ -19,6 +19,14 @@ const dashboardRoutes = [
     sidebar: true,
   },
   {
+    path: "/authereta",
+    name: "ΑΥΘΑΙΡΕΤΑ",
+    icon: "nc-icon nc-istanbul",
+    component: Customers,
+    layout: "/admin",
+    sidebar: true,
+  },
+  {
     path: "/customer/:handle",
     name: "ΕΠΕΞΕΡΓΑΣΙΑ ΠΕΛΑΤΗ",
     icon: "nc-icon nc-single-02",

@@ -158,7 +158,7 @@ class AddCustomer extends Component{
                   </Col>
                 </Row>
                 <Row>
-                  <Col className="pr-3 pl-3" md="5">
+                  <Col className="pr-3 pl-3" md="6">
                     <Form.Group>
                       <label>ΔΙΕΥΘΥΝΣΗ</label>
                       <Form.Control
@@ -169,18 +169,8 @@ class AddCustomer extends Component{
                       ></Form.Control>
                     </Form.Group>
                   </Col>
-                  <Col className="pr-3 pl-3" md="2">
-                    <Form.Group>
-                      <label>ΑΡΙΘΜΟΣ</label>
-                      <Form.Control   
-                      id={"number"}                     
-                        placeholder="Αριθμός"
-                        type="text"
-                        onChange={this.handleInputChange}
-                      ></Form.Control>
-                    </Form.Group>
-                  </Col>
-                  <Col className="pr-3 pl-3" md="3">
+                
+                  <Col className="pr-3 pl-3" md="4">
                     <Form.Group>
                       <label>ΠΕΡΙΟΧΗ</label>
                       <Form.Control
