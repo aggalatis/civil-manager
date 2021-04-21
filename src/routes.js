@@ -6,8 +6,10 @@ import Icons from "views/Icons.js";
 import Maps from "views/Maps.js";
 import Notifications from "views/Notifications.js";
 import Customers from "views/Customers/Customers.js";
+import Authaireta from "views/Authaireta/Authaireta.js";
 import EditCustomers from  "views/Customers/EditCustomer.js"
 import AddCustomer from  "views/Customers/AddCustomer.js"
+import AddAuthaireto from  "views/Authaireta/AddAuthaireto.js"
 
 const dashboardRoutes = [
   {
@@ -22,7 +24,7 @@ const dashboardRoutes = [
     path: "/authereta",
     name: "ΑΥΘΑΙΡΕΤΑ",
     icon: "nc-icon nc-istanbul",
-    component: Customers,
+    component: Authaireta,
     layout: "/admin",
     sidebar: true,
   },
@@ -39,6 +41,14 @@ const dashboardRoutes = [
     name: "ΔΗΜΙΟΥΡΓΙΑ ΠΕΛΑΤΗ",
     icon: "nc-icon nc-single-02",
     component: AddCustomer,
+    layout: "/admin",
+    sidebar: false,
+  },
+  {
+    path: "/addAuthaireto",
+    name: "ΔΗΜΙΟΥΡΓΙΑ ΑΥΘΑΙΡΕΤΟΥ",
+    icon: "nc-icon nc-single-02",
+    component: AddAuthaireto,
     layout: "/admin",
     sidebar: false,
   },
