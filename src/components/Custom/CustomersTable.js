@@ -15,17 +15,6 @@ class CustomersTable extends Component {
   componentDidMount() {
     let columns = [
       {
-        Header: "ID",
-        Id: "Id",
-        accessor: "Id",
-        filterable: true,
-        Cell: (row) => (
-          <div style={{ textAlign: "center" }}>
-            <a href={"/customer/" + row.row.Id}>{row.row.Id}</a>
-          </div>
-        ),
-      },
-      {
         Header: "Όνομα",
         Id: "FirstName",
         accessor: "FirstName",
@@ -54,6 +43,30 @@ class CustomersTable extends Component {
         Id: "Phone",
         accessor: "Phone",
         filterable: true,
+      },
+      {
+        Header: "Αναφορές",
+        Id: "Id",
+        accessor: "Id",
+        filterable: true,
+        Cell: (row) => (
+          <div style={{ textAlign: "center" }}>
+            <a
+              title="Επεξεργασία"
+              href={"/customer/" + row.row.Id}
+              style={{ color: "#000000", margin: "2%" }}
+            >
+              <i className="nc-icon nc-badge"></i>
+            </a>
+            <a
+              title="Αναφορές"
+              href={"/reports/" + row.row.Id}
+              style={{ color: "#006400", margin: "2%" }}
+            >
+              <i className="nc-icon nc-money-coins"></i>
+            </a>
+          </div>
+        ),
       },
     ];
     axios.get(process.env.REACT_APP_API_URL + "Customers").then((response) => {

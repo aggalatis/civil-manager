@@ -3,12 +3,12 @@ import "react-table/react-table.css";
 import axios from "axios";
 import { Form } from "react-bootstrap";
 
-class CustomersSelect extends Component {
+class LawSelect extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      customers: [],
-      customerId: 0,
+      laws: [],
+      lawId: 0,
     };
     this.handleChildChange = this.handleChildChange.bind(this);
   }
@@ -16,38 +16,38 @@ class CustomersSelect extends Component {
   handleChildChange(e) {
     this.props.handleFromParent(e);
     this.setState({
-      customerId: e.target.value,
+      lawId: e.target.value,
     });
   }
   componentDidMount() {
-    axios.get(process.env.REACT_APP_API_URL + "Customers").then((response) => {
+    axios.get(process.env.REACT_APP_API_URL + "Laws").then((response) => {
       if (response.data.status == 200) {
-        const customers = response.data.customers;
-        this.setState({ customers: customers });
+        const laws = response.data.laws;
+        this.setState({ laws: laws });
       } else {
-        this.setState({ customers: [] });
+        this.setState({ laws: [] });
       }
     });
   }
 
   render() {
-    const { customers, customerId } = this.state;
+    const { laws, lawId } = this.state;
     return (
       <Form.Group>
-        <label>ΕΠΙΛΟΓΗ ΠΕΛΑΤΗ</label>
+        <label>ΕΠΙΛΟΓΗ ΝΟΜΟΥ ΥΠΑΓΩΓΗΣ</label>
         <Form.Control
           custom
-          id="customerId"
+          id="lawId"
           as="select"
-          value={customerId}
+          value={lawId}
           onChange={(e) => this.handleChildChange(e)}
         >
           <option value={0} key={0} disabled>
-            Επιλέξτε πελάτη
+            Επιλογή Νόμου υπαγωγής
           </option>
-          {customers.map((customer) => (
-            <option key={customer.Id} value={customer.Id}>
-              {customer.FirstName} {customer.LastName}
+          {laws.map((law) => (
+            <option key={law.Id} value={law.Id}>
+              {law.Name}
             </option>
           ))}
         </Form.Control>
@@ -56,4 +56,4 @@ class CustomersSelect extends Component {
   }
 }
 
-export default CustomersSelect;
+export default LawSelect;

@@ -12,6 +12,13 @@ class AuthairetaTable extends Component {
     };
   }
 
+  renderStatusText(status) {
+    if (status == 0) {
+      return <p style={{ color: "#8B0000", fontWeight: "bold" }}>ΠΕΡΑΙΩΜΕΝΟ</p>;
+    }
+    return <p style={{ color: "#006400", fontWeight: "bold" }}>ΕΝΕΡΓΟ</p>;
+  }
+
   componentDidMount() {
     let columns = [
       {
@@ -34,7 +41,7 @@ class AuthairetaTable extends Component {
       {
         Header: "Πελάτης",
         Id: "CustomerName",
-        accessor: "CustomerName",
+        accessor: "customer_fullname",
         filterable: true,
       },
       {
@@ -53,6 +60,17 @@ class AuthairetaTable extends Component {
         Header: "Κατάσταση",
         Id: "Status",
         accessor: "Status",
+        filterable: true,
+        Cell: (row) => (
+          <div className="actions-right">
+            {this.renderStatusText(row.row.Status)}
+          </div>
+        ),
+      },
+      {
+        Header: "Ημερομηνία Έναρξης",
+        Id: "DateCreated",
+        accessor: "DateCreated",
         filterable: true,
       },
     ];
