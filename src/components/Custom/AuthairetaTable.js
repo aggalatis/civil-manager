@@ -28,7 +28,7 @@ class AuthairetaTable extends Component {
         filterable: true,
         Cell: (row) => (
           <div style={{ textAlign: "center" }}>
-            <a href={"/authaireta/" + row.row.Id}>{row.row.Id}</a>
+            <a href={"/authereto/" + row.row.Id}>{row.row.Id}</a>
           </div>
         ),
       },

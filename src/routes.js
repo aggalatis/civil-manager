@@ -10,6 +10,7 @@ import Authaireta from "views/Authaireta/Authaireta.js";
 import EditCustomers from  "views/Customers/EditCustomer.js"
 import AddCustomer from  "views/Customers/AddCustomer.js"
 import AddAuthaireto from  "views/Authaireta/AddAuthaireto.js"
+import EditAuthaireto from  "views/Authaireta/EditAuthaireto.js"
 
 const dashboardRoutes = [
   {
@@ -33,6 +34,14 @@ const dashboardRoutes = [
     name: "ΕΠΕΞΕΡΓΑΣΙΑ ΠΕΛΑΤΗ",
     icon: "nc-icon nc-single-02",
     component: EditCustomers,
+    layout: "/admin",
+    sidebar: false,
+  },
+  {
+    path: "/authereto/:handle",
+    name: "ΕΠΕΞΕΡΓΑΣΙΑ ΑΥΘΑΙΡΕΤΟΥ",
+    icon: "nc-icon nc-single-02",
+    component: EditAuthaireto,
     layout: "/admin",
     sidebar: false,
   },
